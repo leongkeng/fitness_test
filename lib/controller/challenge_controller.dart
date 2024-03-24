@@ -22,6 +22,12 @@ class ChallengeController extends GetxController {
   final _rewardPoints = 0.0.obs;
   double get rewardPoints => _rewardPoints.value;
 
+  @override
+  void onInit() {
+    super.onInit();
+    getChallengeList();
+  }
+
   void acceptChallenge() {
     _isChallengeAccepted.value = ChallengeProgressStates.accepted;
   }
